@@ -12,7 +12,7 @@ class Main {
 		add_action( 'acf/input/admin_enqueue_scripts', [ $this, 'enqueue_assets' ] );
 
 		// Images
-		add_action( 'acf/input/admin_footer', [ $this, 'layouts_images_style' ], 20 );
+		add_action( 'acf/input/admin_head', [ $this, 'layouts_images_style' ], 20 );
 
 		add_action( 'acf/input/admin_head', [ $this, 'retrieve_flexible_keys' ], 1 );
 	}
@@ -21,6 +21,7 @@ class Main {
 	 * Display the flexible layouts images related css for backgrounds
 	 */
 	public function layouts_images_style() {
+		
 		$images = $this->get_layouts_images();
 		if ( empty( $images ) ) {
 			return;
@@ -148,23 +149,33 @@ class Main {
 		/**
 		 * Allow to add/remove/change the path to images
 		 *
-		 * @params array $path : Path to check
+		 * @param array $path : Path to check
 		 *
 		 * @return array
 		 */
 		$path = apply_filters( 'acf-flexible-content-extended.images_path', 'lib/admin/images/acf-flexible-content-extended' );
 
-		// Rework the tpl
+		// Rework the layout name (replace underscores with hyphens)
 		$layout = str_replace( '_', '-', $layout );
 
-		$image_path = get_stylesheet_directory() . '/' . $path . '/' . $layout . '.jpg';
-		$image_uri = get_stylesheet_directory_uri() . '/' . $path . '/' . $layout . '.jpg';
+		// List of supported image file extensions
+		$extensions = ['jpg', 'png', 'webp'];
 
-		// Direct path to custom folder
-		if ( is_file( $image_path ) ) {
-			return $image_uri;
+		// Loop through each extension to check if the image exists
+		foreach ( $extensions as $ext ) {
+			$image_path = get_stylesheet_directory() . '/' . $path . '/' . $layout . '.' . $ext;
+			$image_uri = get_stylesheet_directory_uri() . '/' . $path . '/' . $layout . '.' . $ext;
+
+			// Check if the image exists for the current extension
+			if ( is_file( $image_path ) ) {
+				return $image_uri;
+			}
 		}
+
+		// Return false if no image is found
+		return false;
 	}
+
 
 	/**
 	 * Register assets

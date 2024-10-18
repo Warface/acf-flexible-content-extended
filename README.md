@@ -9,10 +9,11 @@
 The button to collapse the layouts are changed to an edit button (pencil icon). When you click the edit button or double click the layout, the layout's field will be opened in a modal window.
 
 #### Screenshot of Flexible Content Field Layouts
+
 [![Screenshot](.wordpress.org/screenshot-2.jpg)](#)
 
-
 #### Screenshot of Flexible Content Field Layout Edit Modal
+
 [![Screenshot](.wordpress.org/screenshot-3.jpg)](#)
 
 ## Image Previews
@@ -21,8 +22,8 @@ The button to collapse the layouts are changed to an edit button (pencil icon). 
 
 ### Image Conventions
 
-* The size of the image should be 732 x 300.
-* They should be named based on the layout's name (`text_block`) with underscores converted to dashes (`text-block.jpg`).
+-   The size of the image should be 732 x 300.
+-   They should be named based on the layout's name (`text_block`) with underscores converted to dashes (`text-block.jpg`).
 
 ### Image Location
 
@@ -32,6 +33,13 @@ Also note that you can filter this path, but it **MUST** be in your theme:
 
 ```php
 add_filter( 'acf-flexible-content-extended.images_path', $path );
+
+//Ex:
+add_filter( 'acf-flexible-content-extended.images_path', function() {
+    return 'img/acf';
+});
+
+
 ```
 
 **NOTE:** The path should not have a trailing beginning or trailing slash!
@@ -44,18 +52,16 @@ add_filter( 'acf-flexible-content-extended.images', $images );
 
 ## Requirements
 
-- [ACF Pro >= 5.7.0](https://www.advancedcustomfields.com/)
-- WordPress 4.7+ because of [get_theme_file_uri()](https://developer.wordpress.org/reference/functions/get_theme_file_uri)
-- Browser Support:
-  - Last 2 Firefox major versions
-  - Last 2 Safari major versions
-  - Last 2 Edge major versions
-  - Last 2 Chrome major versions
-- PHP 8.0+
-
+-   [ACF Pro >= 5.7.0](https://www.advancedcustomfields.com/)
+-   WordPress 4.7+ because of [get_theme_file_uri()](https://developer.wordpress.org/reference/functions/get_theme_file_uri)
+-   Browser Support:
+    -   Last 2 Firefox major versions
+    -   Last 2 Safari major versions
+    -   Last 2 Edge major versions
+    -   Last 2 Chrome major versions
+-   PHP 8.0+
 
 ---
-
 
 ## Installation
 
@@ -65,9 +71,7 @@ add_filter( 'acf-flexible-content-extended.images', $images );
 2. Include `"acf-flexible-content-extended": "dev-master"` in your composer file for the latest master's commits or a tag released.
 3. Then add your layout images.
 
-
 ---
-
 
 ### Contributing
 
