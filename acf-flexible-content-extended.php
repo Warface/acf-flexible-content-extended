@@ -1,31 +1,10 @@
 <?php
 /*
  Plugin Name: Flexible Content Extended for Advanced Custom Fields
- Version: 2.0.0
+ Version: 1.0.1
  Plugin URI: https://github.com/jameelmoses/acf-flexible-content-extended
  Description: Extends the ACF Flexible Content Field by transforming the layout list into a modal with image previews. Editing the fields layouts also happens in a modal for a better editing user experience.
- Author: Jameel Moses
- Author URI: https://github.com/jameelmoses
- Text Domain: acf-flexible-content-extended
- Contributors: Ben Voynick, Roman Klabal
-
- ----
-
- Copyright 2021 Jameel Moses and contributors
-
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
-
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
-
- You should have received a copy of the GNU General Public License
- along with this program; if not, write to the Free Software
- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ Author: Warface
  */
 
 // don't load directly
