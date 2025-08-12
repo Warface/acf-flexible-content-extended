@@ -129,7 +129,11 @@ body.acf-modal-open {
 .acf-icon.-pencil::before {
   font-size: 12px;
 }
-
+.acf-flexible-content .layout .acf-fc-layout-actions-wrap .acf-fc-layout-controls .acf-icon{
+  align-items:center;
+  display:flex;
+  justify-content:center;
+}
 @keyframes fcModalSlide {
   from {
     opacity: 0;
@@ -263,4 +267,8 @@ body.acf-modal-open {
   background-repeat: no-repeat !important;
   background-size: contain !important;
   padding-bottom: 100%;
+}
+.active-layout .acf-fc-layout-actions-wrap{
+  left:-100%;
+  position:absolute;
 }
