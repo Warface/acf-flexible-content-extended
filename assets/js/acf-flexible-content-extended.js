@@ -81,7 +81,6 @@
         },
 
         addModal($layout) {
-            console.log($layout);
             $layout.addClass("fc-modal");
             $layout.removeClass("-collapsed");
 
